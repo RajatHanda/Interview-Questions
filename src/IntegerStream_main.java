@@ -16,13 +16,30 @@ public class IntegerStream_main {
         is.add(2);
         is.add(3);
         is.add(4);
-        is.add(5);
+//        is.add(5);
 
-        is.add(15);
-
-        is.activateIterator();
+//        is.add(15);
 
         IntegerStreamSolution isSolution = new IntegerStreamSolution();
-        System.out.print(isSolution.avgLast10Integer(is));
+        System.out.println(isSolution.avgLast10Integer(is));
+
+        is = new IntegerStream<>();
+        is.add(1);
+        is.add(2);
+        is.add(3);
+        is.add(4);
+        is.add(5);
+
+        is.add(1);
+        is.add(2);
+        is.add(3);
+        is.add(4);
+//        is.add(5);
+
+//        is.add(15);
+
+        IntegerStreamSolution_improved isSolution_imp = new IntegerStreamSolution_improved();
+        System.out.print(isSolution_imp.avgLast10Integer(is));
+
     }
 }

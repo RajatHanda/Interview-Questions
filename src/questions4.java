@@ -241,8 +241,6 @@ public class questions4{
 
         is.add(15);
 
-        is.activateIterator();
-
         IntegerStreamSolution isSolution = new IntegerStreamSolution();
         System.out.print(isSolution.avgLast10Integer(is));
 

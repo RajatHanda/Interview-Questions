@@ -10,13 +10,14 @@ public class IntegerStream<T>{
     public void add(T in){
         is.add(in);
     }
-    public void activateIterator(){
+    private void activateIterator(){
         it = is.iterator();
     }
 
     public T next(){
         T t;
         try{
+            if (it == null) activateIterator();
             t = it.next();
         }
         catch (Exception e){
