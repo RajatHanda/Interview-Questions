@@ -21,7 +21,7 @@ public class MissingInteger{
 
         if(!positiveSet.contains(minVal)) return minVal;
         for(int i : positiveSet){
-            if(!positiveSet.contains(minVal + 1)) return (minVal + 1);
+            if(!positiveSet.contains(minVal + 1)) return minVal + 1;
             minVal++;
         }
         return (minVal);
