@@ -26,7 +26,7 @@ public class ShortestSource {
         }
 
         public int hashCode() {
-            return (row + 1) * (col + 1) + col; // tried to come up with a unique number hash function!
+            return (row + 1) * (col + 1) + col; // tried to come up with a unique number generator for hash!
         }
     }
 
