@@ -24,7 +24,7 @@ public class AdjustedBudget {
 
         double c = 0;
 
-        if (remaining <= 0) return c;
+        if (remaining <= 0) return grants[g.length - 1];
 
         // the number of grants affected
         int count = 1;
