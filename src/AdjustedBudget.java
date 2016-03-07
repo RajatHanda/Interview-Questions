@@ -15,8 +15,10 @@ public class AdjustedBudget {
 
         double remaining = sum - b;
         Integer[] grants = new Integer[g.length];
+
         for(int i = 0; i < g.length; i++)
             grants[i] = g[i];
+
         //sorting the array in increasing order
         Arrays.sort(grants);
 
@@ -42,6 +44,7 @@ public class AdjustedBudget {
                 count++;
             }
             else {
+//              Here by the current grant is where c should be determined.
                 found = true;
                 c =  grants[index] - remaining / count;
             }
