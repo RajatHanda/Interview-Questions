@@ -44,7 +44,7 @@ public class AdjustedBudget {
                 count++;
             }
             else {
-//              Here by the current grant is where c should be determined.
+//              Here by the current, c will be determined.
                 found = true;
                 c =  grants[index] - remaining / count;
             }
