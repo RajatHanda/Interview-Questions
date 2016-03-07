@@ -36,6 +36,12 @@ public class ShortestSource {
         Node res = new Node();
         boolean[][] visited;
 
+        List<Node> nodeList;
+        nodeList = new ArrayList<>(Arrays.asList(new Node(1, 2, 1), new Node(3, 4, 5)));
+        Node tempNode = new Node(1, 2, 10);
+        if(nodeList.contains(tempNode))
+            nodeList.get(nodeList.lastIndexOf(tempNode)).distance += tempNode.distance;
+
         for (int i = 0; i < map.length; i++)
             for (int j = 0; j < map[0].length; j++)
                 if (map[i][j] == 2) {
