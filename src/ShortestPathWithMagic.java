@@ -80,7 +80,6 @@ public class ShortestPathWithMagic
             if (!visited[top.id]) {
                 res.add(top);
                 visited[top.id] = true;
-
 			if(top.id == 1) found = true;
             else
                 for (int i = 1; i < dist.length; i++) {
@@ -120,18 +119,18 @@ public class ShortestPathWithMagic
 
         q.add(new Node(0, 0, 0, 0));
         int height = 0;
-        while(!q.isEmpty()){
+        while(!q.isEmpty() && height <= k) {
             Node top = q.removeLast();
             visited[top.id] = true;
-
+            if (top.height <= k) {
                 for (int i = 0; i < matrix.length; i++) {
                     if (!visited[i]) {
                         q.addFirst(new Node(i, top.dist + matrix[top.id][i], top.id, top.height + 1));
-                        if(i == 1)
-                            shortestPath = Math.min(shortestPath, top.dist + matrix[top.id][i]) / 2;
+                        if (i == 1)
+                            shortestPath = Math.min(shortestPath, (top.dist + matrix[top.id][i]) / 2d);
                     }
                 }
-
+            }
         }
         return shortestPath;
     }
