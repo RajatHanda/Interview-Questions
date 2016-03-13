@@ -61,6 +61,33 @@ public class DivisorCount {
         return count + 1;
     }
 
+    public int count2(int n, int k){
+        int MOD = 1000000007;
+        int[][] dp = new int[n + 1][k + 1];
+        long[] sum = new long[n + 1];
+        sum[1] = k;
+
+        for(int i = 2; i <= k; i++)
+            dp[1][i] = 1;
+
+        for(int i = 2; i <= n; i++){
+            dp[i][1] = 1;
+            sum[i] = 1;
+
+            for(int j = 2; j <= k; j++) {
+                long minus = sum[i - 1];
+
+                for (int l = 2 * j; l <= k; l += j)
+                    minus = (minus - dp[i - 1][l]) % MOD;
+
+                dp[i][j] = (int) minus;
+                sum[i] = (sum[i] + dp[i][j]) % MOD;
+            }
+        }
+        return (int)sum[n];
+    }
+
+
     public static void main(String[] args) {
         DivisorCount count = new DivisorCount();
 
@@ -71,11 +98,13 @@ public class DivisorCount {
 
 
         n = 3;
-        k = 8;
+        k = 4;
 
         n = 10;
         k = 100000;
 
-        System.out.print(count.count(n, k));
+//        System.out.println(count.count(n, k));
+        System.out.println(count.count2(n, k));
+
     }
 }
